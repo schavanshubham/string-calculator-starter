@@ -1,20 +1,27 @@
 package calculator;
+import static org.testng.Assert.assertEquals;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
-
+@Test
 class StringCalculatorShould {
+	
+	private StringCalculator stringCalculator;
+	
+	@BeforeTest
+	public void init() {
+		try {
+			stringCalculator = new StringCalculator();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
-    @Test
-    void empty_string_should_return_0() {
-        StringCalculator stringCalculator = new StringCalculator();
-        assertEquals(0, stringCalculator.add(""));
+   
+   public void empty_string_should_return_0() throws Exception {
+        assertEquals(stringCalculator.add(""),0);   
     }
 
-    @Test
-    void string_with_single_number_should_return_number_as_int() {
-        StringCalculator stringCalculator = new StringCalculator();
-        assertEquals(1, stringCalculator.add("1"));
-    }
+  
 }
