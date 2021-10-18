@@ -38,5 +38,7 @@ class StringCalculatorShould {
    public void  negativeInputReturnsException() throws Exception {
    	stringCalculator.add("-1");
    }
-  
+   public void ignoreNumbersGreaterThan1000() throws Exception {
+	   	assertEquals(stringCalculator.add("10,10,1001"),20);
+	   }
 }
